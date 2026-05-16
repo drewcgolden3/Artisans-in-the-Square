@@ -1,0 +1,1211 @@
+39071
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artisans in the Square – Hingham, MA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #FFFDF9;
+    --terracotta: #C1622F;
+    --terra-light: #E8906A;
+    --terra-pale: #F7E8DF;
+    --slate: #3A3530;
+    --slate-mid: #6B5F56;
+    --slate-light: #A0948C;
+    --sage: #7A8C72;
+    --sage-light: #C4CFC0;
+    --sage-pale: #EDF0EB;
+    --gold: #BF9B5A;
+    --gold-pale: #F5EDD8;
+    --border: rgba(58,53,48,0.12);
+    --shadow: 0 2px 20px rgba(58,53,48,0.07);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--slate);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,247,242,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--slate);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-logo span { color: var(--terracotta); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--slate-mid);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--terracotta); }
+
+  .nav-cta {
+    background: var(--terracotta);
+    color: #fff !important;
+    padding: 0.45rem 1.25rem;
+    border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: #A5521F !important; color: #fff !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 68px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem 5rem 5rem;
+    background: var(--warm-white);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--slate);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--slate-mid);
+    line-height: 1.75;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--terracotta);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: #A5521F; transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--slate);
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: 1.5px solid var(--border);
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover { border-color: var(--slate-mid); color: var(--slate); }
+
+  .hero-info {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .hero-info-item { display: flex; flex-direction: column; gap: 0.2rem; }
+
+  .hero-info-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate-light);
+  }
+
+  .hero-info-value {
+    font-size: 0.9rem;
+    color: var(--slate);
+    font-weight: 400;
+  }
+
+  .hero-right {
+    background: var(--terra-pale);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-illustration {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    background: var(--terracotta);
+    overflow: hidden;
+    padding: 0.9rem 0;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    white-space: nowrap;
+    animation: marquee 28s linear infinite;
+  }
+
+  .marquee-item {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .marquee-item::after {
+    content: '✦';
+    font-size: 0.5rem;
+    opacity: 0.6;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 6rem 5rem; }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 600;
+    color: var(--slate);
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-body {
+    font-size: 1rem;
+    color: var(--slate-mid);
+    line-height: 1.8;
+    max-width: 560px;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--warm-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    padding: 7rem 5rem;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .stat-box {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--slate-mid);
+    letter-spacing: 0.04em;
+  }
+
+  .about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .feature-row {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .feature-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--terra-pale);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .feature-icon svg { width: 20px; height: 20px; stroke: var(--terracotta); fill: none; stroke-width: 1.5; }
+
+  .feature-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--slate);
+    margin-bottom: 0.25rem;
+  }
+
+  .feature-text p {
+    font-size: 0.9rem;
+    color: var(--slate-mid);
+    line-height: 1.65;
+  }
+
+  /* ── CRAFTS ── */
+  #crafts {
+    background: var(--cream);
+    padding: 7rem 5rem;
+  }
+
+  .crafts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+    gap: 2rem;
+  }
+
+  .crafts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5px;
+  }
+
+  .craft-card {
+    background: var(--warm-white);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s;
+    cursor: default;
+  }
+
+  .craft-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--terracotta);
+    transition: width 0.3s ease;
+  }
+
+  .craft-card:hover { background: var(--terra-pale); }
+  .craft-card:hover::before { width: 100%; }
+
+  .craft-icon-wrap {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .craft-icon-wrap svg {
+    width: 40px;
+    height: 40px;
+    stroke: var(--slate-mid);
+    fill: none;
+    stroke-width: 1.2;
+    transition: stroke 0.25s;
+  }
+
+  .craft-card:hover .craft-icon-wrap svg { stroke: var(--terracotta); }
+
+  .craft-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--slate);
+    margin-bottom: 0.4rem;
+  }
+
+  .craft-desc {
+    font-size: 0.85rem;
+    color: var(--slate-mid);
+    line-height: 1.65;
+  }
+
+  /* ── ARTISANS ── */
+  #artisans {
+    background: var(--sage-pale);
+    padding: 7rem 5rem;
+  }
+
+  .artisans-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .artisans-header .section-body { margin: 0 auto; text-align: left; max-width: 560px; text-align: center; }
+
+  .artisans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .artisan-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .artisan-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+
+  .artisan-initial {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--terra-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    margin-bottom: 1rem;
+  }
+
+  .artisan-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--slate);
+    margin-bottom: 0.15rem;
+  }
+
+  .artisan-business {
+    font-size: 0.8rem;
+    color: var(--terracotta);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .artisan-medium {
+    font-size: 0.82rem;
+    color: var(--slate-light);
+  }
+
+  /* ── VISIT ── */
+  #visit {
+    background: var(--slate);
+    padding: 7rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  #visit .section-title { color: var(--warm-white); }
+  #visit .section-eyebrow { color: var(--terra-light); }
+  #visit .section-body { color: var(--slate-light); max-width: 420px; }
+
+  .visit-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .visit-detail-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .visit-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .visit-icon svg { width: 18px; height: 18px; stroke: var(--terra-light); fill: none; stroke-width: 1.5; }
+
+  .visit-detail-text h4 {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 0.4rem;
+  }
+
+  .visit-detail-text p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.65;
+  }
+
+  .visit-detail-text a {
+    color: var(--terra-light);
+    text-decoration: none;
+  }
+
+  .visit-detail-text a:hover { text-decoration: underline; }
+
+  .visit-map-placeholder {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .map-embed {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(30%) sepia(10%);
+  }
+
+  /* ── REVIEW ── */
+  #review {
+    background: var(--gold-pale);
+    padding: 6rem 5rem;
+    text-align: center;
+  }
+
+  .review-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+    font-style: italic;
+    color: var(--slate);
+    line-height: 1.7;
+    max-width: 780px;
+    margin: 0 auto 2rem;
+  }
+
+  .review-quote::before { content: '\201C'; }
+  .review-quote::after { content: '\201D'; }
+
+  .review-source {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate-light);
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .star { color: var(--gold); font-size: 1.15rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--slate);
+    padding: 4rem 5rem 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--warm-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-brand-name span { color: var(--terra-light); }
+
+  .footer-desc {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 300px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .social-link:hover { border-color: var(--terra-light); background: rgba(193,98,47,0.1); }
+
+  .social-link svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.5); fill: none; stroke-width: 1.5; }
+  .social-link:hover svg { stroke: var(--terra-light); }
+
+  .footer-col-title {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+
+  .footer-col a {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: var(--terra-light); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  .fade-up-delay-1 { transition-delay: 0.1s; }
+  .fade-up-delay-2 { transition-delay: 0.2s; }
+  .fade-up-delay-3 { transition-delay: 0.3s; }
+  .fade-up-delay-4 { transition-delay: 0.4s; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 4rem 2rem; }
+    #about { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
+    .crafts-grid { grid-template-columns: 1fr 1fr; }
+    section, #crafts, #artisans, #visit, #review { padding: 4rem 2rem; }
+    #visit { grid-template-columns: 1fr; gap: 3rem; }
+    .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Artisans <span>in the Square</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#crafts">Our Crafts</a></li>
+    <li><a href="#artisans">Meet the Artisans</a></li>
+    <li><a href="#visit" class="nav-cta">Visit Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Hingham Square, Massachusetts</div>
+    <h1 class="hero-title">
+      Handcrafted with<br><em>heart & skill</em><br>by local artisans
+    </h1>
+    <p class="hero-desc">
+      A working artisans' cooperative where 14 talented makers share a beautiful shop in historic Hingham Square. Everything here is original, handmade, and sold by the very hands that created it.
+    </p>
+    <div class="hero-actions">
+      <a href="#artisans" class="btn-primary">Meet the Artisans</a>
+      <a href="#visit" class="btn-outline">Hours & Location</a>
+    </div>
+    <div class="hero-info">
+      <div class="hero-info-item">
+        <span class="hero-info-label">Open daily</span>
+        <span class="hero-info-value">10 am – 5 pm</span>
+      </div>
+      <div class="hero-info-item">
+        <span class="hero-info-label">Est.</span>
+        <span class="hero-info-value">2010</span>
+      </div>
+      <div class="hero-info-item">
+        <span class="hero-info-label">Members</span>
+        <span class="hero-info-value">14 artisans</span>
+      </div>
+      <div class="hero-info-item">
+        <span class="hero-info-label">Custom orders</span>
+        <span class="hero-info-value">Welcome</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="images/storefront.jpg" alt="Artisans in the Square storefront in Hingham Square" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;"/>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Blown Glass</span>
+    <span class="marquee-item">Handthrown Pottery</span>
+    <span class="marquee-item">Artisan Jewelry</span>
+    <span class="marquee-item">Cape Cod Baskets</span>
+    <span class="marquee-item">Fiber Arts</span>
+    <span class="marquee-item">Handmade Soaps</span>
+    <span class="marquee-item">Photography</span>
+    <span class="marquee-item">Paper Goods</span>
+    <span class="marquee-item">Needle Felting</span>
+    <span class="marquee-item">Candles</span>
+    <span class="marquee-item">Woven Textiles</span>
+    <span class="marquee-item">Blown Glass</span>
+    <span class="marquee-item">Handthrown Pottery</span>
+    <span class="marquee-item">Artisan Jewelry</span>
+    <span class="marquee-item">Cape Cod Baskets</span>
+    <span class="marquee-item">Fiber Arts</span>
+    <span class="marquee-item">Handmade Soaps</span>
+    <span class="marquee-item">Photography</span>
+    <span class="marquee-item">Paper Goods</span>
+    <span class="marquee-item">Needle Felting</span>
+    <span class="marquee-item">Candles</span>
+    <span class="marquee-item">Woven Textiles</span>
+  </div>
+</div>
+
+
+<!-- PHOTO GALLERY -->
+<section id="gallery" style="padding:5rem 5rem; background:var(--warm-white);">
+  <div class="fade-up" style="text-align:center; margin-bottom:3rem;">
+    <div class="section-eyebrow">Inside the shop</div>
+    <h2 class="section-title">A glimpse of what awaits</h2>
+  </div>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows:auto auto; gap:1rem;" class="fade-up">
+    <div style="grid-row:span 2; border-radius:4px; overflow:hidden;">
+      <img src="images/marisa.jpg" alt="Marisa DeAngelo fine artist with her paintings at Artisans in the Square" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+    </div>
+    <div style="border-radius:4px; overflow:hidden; aspect-ratio:4/3;">
+      <img src="images/beach.jpg" alt="Original oil painting — child at the beach" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+    </div>
+    <div style="border-radius:4px; overflow:hidden; aspect-ratio:4/3;">
+      <img src="images/pottery.jpg" alt="Handthrown pottery mugs and bowl" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+    </div>
+    <div style="border-radius:4px; overflow:hidden; aspect-ratio:4/3;">
+      <img src="images/dog.jpg" alt="Original oil painting — chocolate lab portrait" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+    </div>
+    <div style="border-radius:4px; overflow:hidden; aspect-ratio:4/3;">
+      <img src="images/lanyards.jpg" alt="Handwoven lanyards and keychains" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="fade-up">
+    <div class="section-eyebrow">Our Story</div>
+    <h2 class="section-title">A cooperative built<br>on community & craft</h2>
+    <p class="section-body">
+      Artisans in the Square opened in 2010 in historic Hingham Square with a simple idea: give local makers a beautiful space to sell their work alongside the very people who made it. When you visit, you're likely to be greeted by one of our artisans working behind the counter — meaning you can meet the creator of anything that catches your eye.
+    </p>
+    <p class="section-body" style="margin-top:1rem;">
+      Every piece is original and handmade. We don't sell on consignment — each member is a working co-owner of the shop. New work arrives daily, and we happily welcome custom orders.
+    </p>
+
+    <div class="about-stats">
+      <div class="stat-box fade-up fade-up-delay-1">
+        <div class="stat-number">14</div>
+        <div class="stat-label">Member artisans</div>
+      </div>
+      <div class="stat-box fade-up fade-up-delay-2">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Years in Hingham Square</div>
+      </div>
+      <div class="stat-box fade-up fade-up-delay-3">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Distinct craft mediums</div>
+      </div>
+      <div class="stat-box fade-up fade-up-delay-4">
+        <div class="stat-number">365</div>
+        <div class="stat-label">Days open per year*</div>
+      </div>
+    </div>
+    <p style="font-size:0.72rem; color:var(--slate-light); margin-top:0.5rem;">*Closed Easter, Thanksgiving & Christmas Day</p>
+  </div>
+
+  <div class="about-features fade-up">
+    <div class="feature-row">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+      </div>
+      <div class="feature-text">
+        <h4>All original, all handmade</h4>
+        <p>Everything in the shop is a unique, original work created by one of our 14 member artisans. No mass-produced goods, ever.</p>
+      </div>
+    </div>
+    <div class="feature-row">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="feature-text">
+        <h4>Meet the maker</h4>
+        <p>Our artisans staff the shop themselves, so you can talk directly with the person who created the piece you love — and even place a custom order.</p>
+      </div>
+    </div>
+    <div class="feature-row">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <div class="feature-text">
+        <h4>Something for every price point</h4>
+        <p>From greeting cards and small gifts to statement pieces of blown glass and handthrown pottery — there's something beautiful at every budget.</p>
+      </div>
+    </div>
+    <div class="feature-row">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <div class="feature-text">
+        <h4>Proudly local, deeply rooted</h4>
+        <p>Our artisans live and work on Massachusetts' South Shore, and the shop has been a beloved part of Hingham Square for over fifteen years.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRAFTS -->
+<section id="crafts">
+  <div class="crafts-header">
+    <div>
+      <div class="section-eyebrow fade-up">What we make</div>
+      <h2 class="section-title fade-up">Crafts for every taste</h2>
+    </div>
+    <p class="section-body fade-up" style="max-width:360px; text-align:right;">
+      Our cooperative spans over ten distinct mediums — from the ancient art of glassblowing to delicate fiber arts — each practiced to a high standard.
+    </p>
+  </div>
+
+  <div class="crafts-grid">
+    <div class="craft-card fade-up fade-up-delay-1">
+      <div class="craft-icon-wrap">
+        <svg viewBox="0 0 48 48"><ellipse cx="24" cy="38" rx="14" ry="5"/><path d="M16 38 Q10 28 14 18 Q18 10 24 8 Q30 10 34 18 Q38 28 32 38"/><path d="M20 24 Q24 20 28 24"/><path d="M18 30 Q24 26 30 30"/></svg>
+      </div>
+      <div class="craft-name">Blown Glass</div>
+      <div class="craft-desc">Handblown drinkware and home décor inspired by the natural world, crafted in Cambridge studios.</div>
+    </div>
+    <div class="craft-card fade-up fade-up-delay-2">
+      <div class="craft-icon-wrap">
+        <svg viewBox="0 0 48 48"><ellipse cx="24" cy="36" rx="16" ry="6"/><path d="M14 36 Q10 24 14 14 Q18 6 24 6 Q30 6 34 14 Q38 24 34 36"/><path d="M20 18 Q24 14 28 18"/></svg>
+      </div>
+      <div class="craft-name">Pottery</div>
+      <div class="craft-desc">Wheel-thrown, functional pieces with beautiful surface decoration — microwave and food safe.</div>
+    </div>
+    <div class="craft-card fade-up fade-up-delay-3">
+      <div class="craft-icon-wrap">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="10"/><path d="M24 14 Q30 10 36 14"/><path d="M14 20 Q10 14 12 8"/><path d="M34 20 Q38 14 36 8"/></svg>
+      </div>
+      <div class="craft-name">Artisan Jewelry</div>
+      <div class="craft-desc">Handcrafted pieces from fine metals, gemstones, and unique materials found along the South Shore coast.</div>
+    </div>
+    <div class="craft-card fade-up fade-up-delay-4">
+      <div class="craft-icon-wrap">
+        <svg viewBox="0 0 48 48"><path d="M8 40 Q24 32 40 40"/><path d="M8 40 Q8 20 24 12 Q40 20 40 40"/><path d="M16 36 Q24 28 32 36"/><path d="M12 40 Q18 32 24 30 Q30 32 36 40"/></svg>
+      </div>
+      <div class="craft-name">Cape Cod Baskets</div>
+      <div class="craft-desc">Traditional Nantucket and Cape Cod-style baskets woven in the authentic New England tradition.</div>
+    </div>
+    <div class="craft-card fade-up">
+      <div class="craft-icon-wrap">
+        <svg viewBox="0 0 48 48"><path d="M12 8 Q12 28 24 40 Q36 28 36 8"/><path d="M18 12 Q24 16 30 12"/><path d="M16 20 Q24 26 32 20"/><path d="M18 28 Q24 32 30 28"/></svg>
+      </div>
+      <div class="craft-name">Fiber Arts</div>
+      <div class="craft-desc">Woven textiles, needle felting, and chenille work — from tea towels and placemats to handcrafted clothing.</div>
+    </div>
+    <div class="craft-card fade-up fade-up-delay-1">
+      <div class="craft-icon-wrap">
+        <svg viewBox="0 0 48 48"><rect x="12" y="16" width="24" height="22" rx="3"/><path d="M18 16 Q18 10 24 8 Q30 10 30 16"/><path d="M20 28 Q24 24 28 28"/><circle cx="24" cy="32" r="2"/></svg>
+      </div>
+      <div class="craft-name">Soaps & Candles</div>
+      <div class="craft-desc">Artisanal hand-poured soaps and candles, beautifully crafted and perfect for gifting.</div>
+    </div>
+    <div class="craft-card fade-up fade-up-delay-2">
+      <div class="craft-icon-wrap">
+        <svg viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="22" rx="2"/><circle cx="24" cy="21" r="6"/><path d="M10 36 L16 32 L22 36 L28 32 L38 36"/></svg>
+      </div>
+      <div class="craft-name">Photography</div>
+      <div class="craft-desc">Fine art photography of New England's landscapes, seascapes, and quiet moments, printed on archival paper.</div>
+    </div>
+    <div class="craft-card fade-up fade-up-delay-3">
+      <div class="craft-icon-wrap">
+        <svg viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="28" rx="2"/><path d="M16 20 L32 20"/><path d="M16 26 L28 26"/><path d="M16 32 L24 32"/><path d="M14 14 L34 14" stroke-dasharray="2 2"/></svg>
+      </div>
+      <div class="craft-name">Paper Goods</div>
+      <div class="craft-desc">Handmade cards, journals, and paper gifts — thoughtfully crafted and ideal for every occasion.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTISANS -->
+<section id="artisans">
+  <div class="artisans-header fade-up">
+    <div class="section-eyebrow">The makers</div>
+    <h2 class="section-title">Meet the artisans</h2>
+    <p class="section-body">Our 14 member artisans are the heart of this cooperative. Each one brings a unique craft, a personal story, and genuine passion to everything they create.</p>
+  </div>
+
+  <div class="artisans-grid">
+    <div class="artisan-card fade-up">
+      <div class="artisan-initial">SS</div>
+      <div class="artisan-name">Sandi Smith</div>
+      <div class="artisan-business">Photographs by Sandi</div>
+      <div class="artisan-medium">Photography · Cards · Gifts</div>
+    </div>
+    <div class="artisan-card fade-up fade-up-delay-1">
+      <div class="artisan-initial">JS</div>
+      <div class="artisan-name">Janine Senatore</div>
+      <div class="artisan-business">Janine Senatore Pottery</div>
+      <div class="artisan-medium">Wheel-thrown pottery · Sgraffito</div>
+    </div>
+    <div class="artisan-card fade-up fade-up-delay-2">
+      <div class="artisan-initial">RP</div>
+      <div class="artisan-name">Rebecca Potash</div>
+      <div class="artisan-business">K+ Glass</div>
+      <div class="artisan-medium">Blown glass · Drinkware · Home décor</div>
+    </div>
+    <div class="artisan-card fade-up fade-up-delay-3">
+      <div class="artisan-initial">CH</div>
+      <div class="artisan-name">Claire Hassett</div>
+      <div class="artisan-business">Barn Door Arts</div>
+      <div class="artisan-medium">Fiber arts · Woven textiles</div>
+    </div>
+    <div class="artisan-card fade-up">
+      <div class="artisan-initial">GS</div>
+      <div class="artisan-name">Gerry Swirbalus</div>
+      <div class="artisan-business">Lily and Evy Soap Design</div>
+      <div class="artisan-medium">Handcrafted soaps</div>
+    </div>
+    <div class="artisan-card fade-up fade-up-delay-1">
+      <div class="artisan-initial">DM</div>
+      <div class="artisan-name">Donna Mannion</div>
+      <div class="artisan-business">HeartFelt Designs</div>
+      <div class="artisan-medium">Needle felting · Chenille</div>
+    </div>
+    <div class="artisan-card fade-up fade-up-delay-2">
+      <div class="artisan-initial">EM</div>
+      <div class="artisan-name">Erin Merchant MacCallister</div>
+      <div class="artisan-business">The Paper Merchant</div>
+      <div class="artisan-medium">Handmade paper products · Cards</div>
+    </div>
+    <div class="artisan-card fade-up fade-up-delay-3">
+      <div class="artisan-initial">SD</div>
+      <div class="artisan-name">Shari Deasy</div>
+      <div class="artisan-business">—</div>
+      <div class="artisan-medium">Fine crafts · Cooperative co-founder</div>
+    </div>
+    <div class="artisan-card fade-up">
+      <div class="artisan-initial">+6</div>
+      <div class="artisan-name">Six more artisans</div>
+      <div class="artisan-business">Stop in to meet everyone</div>
+      <div class="artisan-medium">Jewelry · Baskets · Candles & more</div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:3rem;" class="fade-up">
+    <a href="#visit" class="btn-primary">Visit us to meet the makers</a>
+  </div>
+</section>
+
+<!-- REVIEW -->
+<section id="review">
+  <div class="review-stars fade-up">
+    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+  </div>
+  <blockquote class="review-quote fade-up">
+    This is a beautiful shop. All the work is from local artists, and it is outstanding. There are a lot of price points for gifts and a wide range of choices, from blown glass, pottery, jewelry, paper goods, Cape Cod baskets, candles, soap, and more. I highly recommend a visit to Hingham's Artisans in the Square.
+  </blockquote>
+  <div class="review-source fade-up">— Verified Yelp Review</div>
+</section>
+
+<!-- VISIT -->
+<section id="visit">
+  <div>
+    <div class="section-eyebrow">Find us</div>
+    <h2 class="section-title">Come visit us in<br>Hingham Square</h2>
+    <p class="section-body">
+      We're easy to find in the heart of historic Hingham Square — right in the center of town, steps from The Hingham Co-op. Come in, browse, and meet the artisan on duty.
+    </p>
+
+    <div class="visit-details" style="margin-top:3rem;">
+      <div class="visit-detail-row">
+        <div class="visit-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <div class="visit-detail-text">
+          <h4>Address</h4>
+          <p>63 South Street<br>Hingham, MA 02043</p>
+        </div>
+      </div>
+      <div class="visit-detail-row">
+        <div class="visit-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="visit-detail-text">
+          <h4>Hours</h4>
+          <p>Open daily, 10 am – 5 pm<br><span style="color:rgba(255,255,255,0.45); font-size:0.85rem;">Occasionally open late — call ahead. Closed Easter, Thanksgiving & Christmas Day.</span></p>
+        </div>
+      </div>
+      <div class="visit-detail-row">
+        <div class="visit-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.28 6.28l1.88-1.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="visit-detail-text">
+          <h4>Phone</h4>
+          <p><a href="tel:7817492590">(781) 749-2590</a></p>
+        </div>
+      </div>
+      <div class="visit-detail-row">
+        <div class="visit-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="visit-detail-text">
+          <h4>Email</h4>
+          <p><a href="mailto:info@artisansinthesquare.com">info@artisansinthesquare.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="visit-map-placeholder fade-up">
+    <iframe
+      class="map-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.4!2d-70.8895!3d42.2404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e49dc9c9c9c9c9%3A0x0!2s63+South+St%2C+Hingham%2C+MA+02043!5e0!3m2!1sen!2sus!4v1"
+      loading="lazy"
+      title="Map showing 63 South Street, Hingham, MA"
+      aria-label="Google Map of Artisans in the Square location"
+    ></iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Artisans <span>in the Square</span></div>
+      <p class="footer-desc">A working artisans' cooperative in historic Hingham Square. Every piece is original, handcrafted, and sold by the maker.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/Artisansinthesquare/" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/artisansinthesquare/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="mailto:info@artisansinthesquare.com" class="social-link" aria-label="Email us">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Navigate</div>
+      <ul>
+        <li><a href="#about">About the Shop</a></li>
+        <li><a href="#crafts">Our Crafts</a></li>
+        <li><a href="#artisans">Meet the Artisans</a></li>
+        <li><a href="#visit">Hours & Location</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <ul>
+        <li><a href="tel:7817492590">(781) 749-2590</a></li>
+        <li><a href="mailto:info@artisansinthesquare.com">info@artisansinthesquare.com</a></li>
+        <li><a href="https://goo.gl/maps/hingham63south" target="_blank" rel="noopener">63 South Street, Hingham MA</a></li>
+        <li><a href="https://www.facebook.com/Artisansinthesquare/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/artisansinthesquare/" target="_blank" rel="noopener">Instagram @artisansinthesquare</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Artisans in the Square. All rights reserved.</span>
+    <span class="footer-copy">Open daily 10 am – 5 pm · 63 South Street, Hingham MA</span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Fix Google Maps embed with actual coordinates
+  const mapIframe = document.querySelector('.map-embed');
+  if (mapIframe) {
+    mapIframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965!2d-70.8895!3d42.2404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e49dc9cf8a2a4f%3A0x9b0e0c7e6a1c3!2s63%20South%20St%2C%20Hingham%2C%20MA%2002043!5e0!3m2!1sen!2sus!4v1715000000000!5m2!1sen!2sus";
+  }
+</script>
+</body>
+</html>
